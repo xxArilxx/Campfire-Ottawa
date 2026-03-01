@@ -18,9 +18,6 @@ define audio.door = "door_open.mp3"
 define audio.lightBuzz = "light_buzzing.mp3"
 define audio.keyTurn = "key.mp3"
 
-#temp
-define audio.scary = "door_open.mp3"
-
 # --- 2. GAME START ---
 label start: 
     scene entering
@@ -141,8 +138,6 @@ label no_confront:
             return
 
 label call_police:
-    play sound scary
-    
     p "... and you found this body just, there?"
     y "Yes, officer. He... he was my boyfriend. I can't believe anyone would do that."
     p "Did you get into an argument before this happened? "
@@ -159,9 +154,6 @@ label call_police:
     with fade
 
     "Judge" "... and you are now sentenced to 10 years in prison. "
-
-    play sound scary  #this doomed sound
-    hide charSprite #mc
 
     hide charSprite #mc
     scene fail
